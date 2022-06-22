@@ -2,8 +2,9 @@
 # квадратичную матрицу с количеством строк и столбцов равному
 # этому числу, программа заполняет матрицу случайными числами
 # от 10 до 99
-# number = int(input("Number "))
-number = 4
+from random import randint
+number = int(input("Number "))
+# number = 4
 arr = []
 for g in range(number):
     part = []
@@ -23,7 +24,7 @@ for g in arr:
         if indver == 0 and indhor == 0:
             newarr.append(arr[indver][indhor+1]
                           +arr[indver+1][indhor+1]
-                          +arr[indver+1][indhor+1]
+                          +arr[indver+1][indhor]
                          )
             indhor = indhor + 1
         elif indver == 0 and indhor == number-1:
@@ -34,9 +35,9 @@ for g in arr:
         elif indver == 0 and indhor>0:
             newarr.append(arr[indver][indhor-1]
                           +arr[indver+1][indhor-1]
+                          +arr[indver+1][indhor]
                           +arr[indver+1][indhor+1]
-                          +arr[indver+1][indhor+1]
-                          +arr[indver+0][indhor+1]
+                          +arr[indver][indhor+1]
                          )
             indhor = indhor +1
         elif indver > 0 and indhor == 0:
@@ -61,6 +62,7 @@ for g in arr:
     indhor = 0
     indver = indver + 1
     print(newarr)
+    newarr = []
 
 for j in newarr:
     print(j)
