@@ -48,17 +48,16 @@ for g in arr:
                           +arr[indver][indhor]
                          )
             indhor = indhor +1
-        elif indver > 0 and indhor > 0:
+        elif indver > 0 and indver < 0 and indhor > 0 and indhor < 0:
             newarr.append(arr[indver-1][indhor]
                           +arr[indver-1][indhor+1]
                           +arr[indver][indhor+1]
-                          +arr[indver][indhor+1]
-                          +arr[indver][indhor]
-                          +arr[indver][indhor-1]
+                          +arr[indver+1][indhor+1]
+                          +arr[indver+1][indhor]
+                          +arr[indver+1][indhor-1]
                           +arr[indver][indhor-1]
                           +arr[indver-1][indhor-1]
                          )
-            # indver = indver +1
     indhor = 0
     indver = indver + 1
     print(newarr)
