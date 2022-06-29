@@ -9,7 +9,12 @@ class Car():
 
     def __init__(self, brand):
         self.brand = brand
-        self.features = []
+        self.features = {'mass': [],
+                         'power': [],
+                         'cost': [],
+                         'year': [],
+                         'nation': []
+                        }
 
     def carInfo(self):
         for i in range(5):
