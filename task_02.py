@@ -62,6 +62,8 @@ for g in arr:
     indver = indver + 1
     print(newarr)
     newarr = []
+    if indver == number:
+        break
 
 for j in newarr:
     print(j)
