@@ -45,6 +45,28 @@ class LandscapeMap():
                     part[count] = '*'
                 count = count + 1
 
+    def buildBridge(self):
+        hcount = 0
+        vcount = 0
+        for part in self.map:
+            if vcount == 5:
+                break
+            else:
+                for g in part:
+                    type = g
+                    if hcount == 0 or hcount == len(part)-1  or vcount==0 or vcount==len(part)-1:
+                        continue
+                    if type == 'R' or type == 'L':
+                        if self.map[vcount-1]=='*' and self.map[vcount+1]=='*':
+                            part[hcount] == '|'
+                        elif self.map[hcount-1]=='*' and self.map[hcount+1]=='*':
+                            part[hcount] == '='
+                    if hcount != 4:
+                        hcount = hcount + 1
+                    else:
+                        hcount = 1
+                        vcount = vcount + 1
+
 x = LandscapeMap(5, 5)
 print(x.map)
 x.makeMap()
@@ -52,4 +74,7 @@ print('---------------------')
 x.showMap()
 print('---------------------')
 x.buildRoad()
+x.showMap()
+print('---------------------')
+x.buildBridge()
 x.showMap()
