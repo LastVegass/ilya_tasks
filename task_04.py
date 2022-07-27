@@ -36,7 +36,20 @@ class LandscapeMap():
         for j in self.map:
             print(j)
 
-x = LandscapeMap(10, 10)
+    def buildRoad(self):
+        for part in self.map:
+            count = 0
+            for g in part:
+                type = g
+                if type == 'P' or type == 'F' or type == 'W':
+                    part[count] = '*'
+                count = count + 1
+
+x = LandscapeMap(5, 5)
 print(x.map)
 x.makeMap()
+print('---------------------')
+x.showMap()
+print('---------------------')
+x.buildRoad()
 x.showMap()
